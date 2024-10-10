@@ -380,24 +380,108 @@ a:focus {
 /*******************************/
 /******* Page Header CSS *******/
 /*******************************/
-.page-header {
+.page-header1 {
     position: relative;
     margin-bottom: 45px;
     padding: 90px 0;
     text-align: center;
-    background:  #afc236;
+    background:  url('/img/carousel-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.page-header2 {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 90px 0;
+    text-align: center;
+    background:  url('/img/carousel-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.page-header3 {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 90px 0;
+    text-align: center;
+    background:  url('/img/carousel-3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.page-header4 {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 90px 0;
+    text-align: center;
+    background:  url('/img/service-6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.page-header h2 {
+.page-header1 h2 {
     position: relative;
-    color: #2b68a0;
+    color: #afc236;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+.page-header2 h2 {
+    position: relative;
+    color: #afc236;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+.page-header3 h2 {
+    position: relative;
+    color: #afc236;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+.page-header4 h2 {
+    position: relative;
+    color: #afc236;
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 20px;
     padding-bottom: 5px;
 }
 
-.page-header h2::after {
+.page-header1 h2::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    left: calc(50% - 50px);
+    bottom: 0;
+    background: #2b68a0;
+}
+.page-header2 h2::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    left: calc(50% - 50px);
+    bottom: 0;
+    background: #2b68a0;
+}
+.page-header3 h2::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    left: calc(50% - 50px);
+    bottom: 0;
+    background: #2b68a0;
+}
+.page-header4 h2::after {
     position: absolute;
     content: "";
     width: 100px;
@@ -407,14 +491,42 @@ a:focus {
     background: #2b68a0;
 }
 
-.page-header a {
+.page-header1 a {
+    position: relative;
+    padding: 0 12px;
+    font-size: 22px;
+    color: #2b68a0;
+}
+.page-header2 a {
+    position: relative;
+    padding: 0 12px;
+    font-size: 22px;
+    color: #2b68a0;
+}
+.page-header3 a {
+    position: relative;
+    padding: 0 12px;
+    font-size: 22px;
+    color: #2b68a0;
+}
+.page-header4 a {
     position: relative;
     padding: 0 12px;
     font-size: 22px;
     color: #2b68a0;
 }
 
-.page-header a:hover {
+
+.page-header1 a:hover {
+    color: #ffffff;
+}
+.page-header2 a:hover {
+    color: #ffffff;
+}
+.page-header3 a:hover {
+    color: #ffffff;
+}
+.page-header4 a:hover {
     color: #ffffff;
 }
 
