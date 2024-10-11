@@ -10,5 +10,8 @@
   },
   "author": "Keith Twesigywe",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "graphql-request": "^7.1.0"
+  }
 }
