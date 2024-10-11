@@ -1,7 +1,6 @@
 {
   "name": "builerz-master",
   "version": "1.0.0",
-  "main": "mainPageBalance.js",
   "directories": {
     "lib": "lib"
   },
