@@ -1,6 +1,6 @@
 //@ts-check
-import { dom } from "../util";
-import { fetchHomePageData } from "../queries/homePageQuery";
+import { dom } from "../util.js";
+import { fetchHomePageData } from "../queries/homePageQuery.js";
 
 class MainDataGetter {
   /**
@@ -40,6 +40,8 @@ class MainDataGetter {
         (/** @type {{ nadMainpages: any[]; }} */ data) => {
           let fetchedData = data.nadMainpages[0];
 
+          console.log("home_page",fetchedData)
+
           //data from the banner Images
           let bannerImageFetchedData = fetchedData.bannerImage;
           this.distributeForBannerImages(
@@ -78,7 +80,7 @@ class MainDataGetter {
 
       let imgElement = d.querySelector('img');
       // @ts-ignore
-      imgElement?.src  = quantifiedData.url;
+      imgElement.src  = quantifiedData.url;
 
     })
    
@@ -97,11 +99,11 @@ class MainDataGetter {
         let quantifiedData = data[index]
 
         // @ts-ignore
-        teamImageElement?.src = quantifiedData.engineerImage.url;
+        teamImageElement.src = quantifiedData.engineerImage.url;
         //@ts-ignore
-        teamTitle?.innerHTML = quantifiedData.engineerName.text;
+        teamTitle.innerHTML = quantifiedData.engineerName.text;
         //@ts-ignore
-        teamPost?.innerHTML = quantifiedData.engineerCompanypost.text;
+        teamPost.innerHTML = quantifiedData.engineerCompanypost.text;
 
 
     })
