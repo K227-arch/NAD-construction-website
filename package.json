@@ -1,7 +1,6 @@
 {
   "name": "builerz-master",
   "version": "1.0.0",
-  "main": "mainPageBalance.js",
   "directories": {
     "lib": "lib"
   },
@@ -12,5 +11,8 @@
   },
   "author": "Keith Twesigywe",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "graphql-request": "^7.1.0"
+  }
 }
