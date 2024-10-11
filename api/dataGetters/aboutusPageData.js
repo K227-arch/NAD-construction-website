@@ -1,5 +1,44 @@
-import { dom } from "../util.js";
-import { fetchAboutPageData } from "../queries/aboutPageQuery.js";
+/**
+ * 
+ * @param {@type} item 
+ * @returns 
+ */
+
+function dom(item) {
+
+  return document.querySelector(item)
+
+
+}
+
+const GRAPH_CMS_CLIENT = new graphqlRequest.GraphQLClient(
+  "https://eu-west-2.cdn.hygraph.com/content/cm1yhii9j04qr07w2iq1d24ql/master"
+);
+
+const aboutUsQL = graphqlRequest.gql`
+{
+  nadAboutspages{
+    aboutusBannerImage{
+      url
+    }
+    visionMissionImage{
+      url
+    }
+    corevaluesComponent {
+      corevaluename
+      corevalueImage {
+        url
+      }
+    }
+  }
+}
+
+`;
+
+function fetchAboutPageData() {
+  return GRAPH_CMS_CLIENT.request(aboutUsQL);
+}
+
 
 class AboutUsDataGetter {
   /**

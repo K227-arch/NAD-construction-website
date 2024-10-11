@@ -1,5 +1,29 @@
 import { fetchServicesPageData } from "../queries/servicePageQuery.js";
 
+
+/**
+ *
+ * The GraphQL Client  
+ * 
+ */
+ const GRAPH_CMS_CLIENT =  new graphqlRequest.GraphQLClient("https://eu-west-2.cdn.hygraph.com/content/cm1yhii9j04qr07w2iq1d24ql/master");
+
+const servicesQL = graphqlRequest.gql`
+{
+  nadServices {
+    serviceName
+    serviceImage {
+      url
+    }
+  }
+}
+
+`;
+
+ function fetchServicesPageData(){
+    return GRAPH_CMS_CLIENT.request(servicesQL)
+}
+
 class ServicesPageDataGetter {
   /**
    * The service Elements
