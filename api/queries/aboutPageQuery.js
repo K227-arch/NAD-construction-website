@@ -1,10 +1,12 @@
-import * as col from 'https://esm.run/graphql-request';
+import * as col from "https://esm.run/graphql-request";
 /**
  *
- * The GraphQL Client  
- * 
+ * The GraphQL Client
+ *
  */
-export const GRAPH_CMS_CLIENT =  new col.GraphQLClient("");
+export const GRAPH_CMS_CLIENT = new col.GraphQLClient(
+  "https://eu-west-2.cdn.hygraph.com/content/cm1yhii9j04qr07w2iq1d24ql/master"
+);
 
 const aboutUsQL = col.gql`
 {
@@ -26,6 +28,6 @@ const aboutUsQL = col.gql`
 
 `;
 
-export function fetchAboutPageData(){
-    return GRAPH_CMS_CLIENT.request(aboutUsQL)
+export function fetchAboutPageData() {
+  return GRAPH_CMS_CLIENT.request(aboutUsQL);
 }

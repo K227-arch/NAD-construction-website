@@ -1,4 +1,4 @@
-import * as col from 'https://esm.run/graphql-request';
+import * as col from 'https://cdn.jsdelivr.net/npm/graphql-request@7.1.0/+esm';
 /**
  *
  * The GraphQL Client  
@@ -41,3 +41,4 @@ const mainPageQL = col.gql`
 export function fetchHomePageData(){
     return GRAPH_CMS_CLIENT.request(mainPageQL)
 }
+
