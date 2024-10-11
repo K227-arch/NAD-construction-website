@@ -1,54 +1,6 @@
-/**
- * 
- * @param {@type} item 
- * @returns 
- */
-
-function dom(item) {
-
-  return document.querySelector(item)
-
-
-}
-const GRAPH_CMS_CLIENT =  new graphqlRequest.GraphQLClient("https://eu-west-2.cdn.hygraph.com/content/cm1yhii9j04qr07w2iq1d24ql/master");
-
-const mainPageQL = graphqlRequest.gql`
-
-{
-  nadMainpages {
-    bannerImage {
-      url
-    }
-    briefAbout {
-      url
-    }
-    videoContainer {
-      url
-    }
-    engineerComponent {
-      engineerName {
-        text
-      }
-      engineerCompanypost {
-        text
-      }
-      engineerImage {
-        url
-      }
-    }
-    testimonialImages {
-      url
-    }
-  }
-}
-
-`;
-
- function fetchHomePageData(){
-    return GRAPH_CMS_CLIENT.request(mainPageQL)
-}
-
-
+//@ts-check
+import { dom } from "../util.js";
+import { fetchHomePageData } from "../queries/homePageQuery.js";
 
 class MainDataGetter {
   /**
