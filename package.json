@@ -1,9 +1,6 @@
 {
   "name": "builerz-master",
   "version": "1.0.0",
-  "directories": {
-    "lib": "lib"
-  },
   "type": "module",
    "module": "esnext",
   "scripts": {

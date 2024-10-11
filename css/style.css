@@ -914,7 +914,7 @@ a:focus {
 }
 
 .service .service-item:hover .service-overlay {
-    opacity: 1;
+    opacity: 8;
 }
 
 .service .service-overlay p {
