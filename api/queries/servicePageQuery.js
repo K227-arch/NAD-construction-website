@@ -1,4 +1,4 @@
-import * as col from 'https://esm.run/graphql-request';
+import * as col from 'graphql-request';
 /**
  *
  * The GraphQL Client  

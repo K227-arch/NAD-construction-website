@@ -1,4 +1,4 @@
-import * as col from 'https://cdn.jsdelivr.net/npm/graphql-request@7.1.0/+esm';
+import * as col from 'graphql-request';
 /**
  *
  * The GraphQL Client  
