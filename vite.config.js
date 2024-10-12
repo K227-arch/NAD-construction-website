@@ -1,7 +1,19 @@
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import { resolve } from "path";
 
 /** @type {import('vite').UserConfig} */
 export default {
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        about: resolve(__dirname, "./about.html"),
+        service: resolve(__dirname, "./service.html"),
+        contact: resolve(__dirname, "./contact.html"),
+        portfolio: resolve(__dirname, "./portfolio.html"),
+      },
+    },
+  },
   plugins: [
     viteStaticCopy({
       targets: [
@@ -24,22 +36,6 @@ export default {
         {
           src: "img/*",
           dest: "img",
-        },
-        {
-          src: "about.html",
-          dest: ".",
-        },
-        {
-          src: "contact.html",
-          dest: ".",
-        },
-        {
-          src: "service.html",
-          dest: ".",
-        },
-        {
-          src: "portfolio.html",
-          dest: ".",
         },
       ],
     }),
