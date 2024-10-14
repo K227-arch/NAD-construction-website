@@ -11,13 +11,13 @@ class AboutUsDataGetter {
   /**
    * VisionAboutImage
    */
-  visionImage = dom(".about-img-cls > img");
+  visionImages = document.querySelectorAll(".about-us-carousel-item > div")
 
   /**
    * Corevalues components
    */
 
-  coreValueElements = document.querySelectorAll(".core-values-container > div");
+  coreValueElements = document.querySelectorAll("#core-values-area > div");
 
   main() {
     try {
@@ -28,24 +28,30 @@ class AboutUsDataGetter {
         //the about banner image container
         this.aboutusBannerImage.style.backgroundImage = `url(${fetchedData.aboutusBannerImage.url})`;
 
-        //for the vision Image
-        this.visionImage.src = fetchedData.visionMissionImage.url;
+        //for the vision Images
+        this.visionImages.forEach((divEle,index)=>{
+          let imgContainer = divEle.querySelector("img");
+          imgContainer.src = fetchedData.visionMissionImage[index]
+        })
+       
 
-        console.log("vison-mission",visionMissionImage)
-
-        console.log(this.coreValueElements)
-
+        console.log("items",this.coreValueElements)
         //for the corevalue Elements
-        // this.coreValueElements.forEach((v, idx) => {
-        //   let fetchedCoreValueData = corevaluesComponent[idx];
-        //   //check with the corevalue name to be corresponding
+        this.coreValueElements.forEach((v, idx) => {
+          let fetchedCoreValueData = fetchedData.corevaluesComponent[idx];
+          //check with the corevalue name to be corresponding
 
-        //   let corevlaueNameCorresponding = v.querySelector("h3");
-        //   if (corevlaueNameCorresponding.innerHTML == fetchedCoreValueData.corevaluename) {
-        //     let currentImage = v.querySelector("img");
-        //     currentImage.src = fetchedCoreValueData.corevalueImage.url;
-        //   }
-        // });
+          console.log("fetchd-core-value-item",fetchedCoreValueData)
+
+          let corevlaueNameCorresponding = v.querySelector("h3");
+          if (corevlaueNameCorresponding.innerHTML == fetchedCoreValueData.corevaluename) {
+            let currentImage = v.querySelector("img");
+            currentImage.style.width = "300px"
+            currentImage.style.height = "200px"
+
+            currentImage.src = fetchedCoreValueData.corevalueImage.url;
+          }
+        });
       });
     } catch (error) {
         console.log("fetched data for the aboutus data")
