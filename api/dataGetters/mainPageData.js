@@ -121,4 +121,4 @@ class MainDataGetter {
   }
 }
 
-new MainDataGetter().main();
+// new MainDataGetter().main();
