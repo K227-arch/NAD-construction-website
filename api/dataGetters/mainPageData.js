@@ -28,12 +28,6 @@ class MainDataGetter {
   );
 
 
-  /**
-   * Testimonial Images
-   */
-
-  testimonyImages = document.querySelectorAll(".testimonial-slider-nav > div")
-
   main() {
     try {
       fetchHomePageData().then(
@@ -59,31 +53,13 @@ class MainDataGetter {
           this.videoElement.setAttribute("data-src",videoContainerFetchedData.url) 
 
           //data for the team Members
-          this.distributeDataForTeamElements(fetchedData.engineerComponent)
-
-          //data for the testimony Images
-          this.distributeDataForTestimonialImages(fetchedData.testimonialImages)
+          // this.distributeDataForTeamElements(fetchedData.engineerComponent)
         }
       );
     } catch (error) {
 
       console.log("An error occured while trying to fetch data from the server")
     }
-  }
-
-  /**
-   * @param {{url:string}[]} data
-   */
-  distributeDataForTestimonialImages(data){
-    this.testimonyImages.forEach((d,idx)=>{
-      let quantifiedData = data[idx]
-
-      let imgElement = d.querySelector('img');
-      // @ts-ignore
-      imgElement.src  = quantifiedData.url;
-
-    })
-   
   }
 
   /**

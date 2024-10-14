@@ -11,7 +11,7 @@ class AboutUsDataGetter {
   /**
    * VisionAboutImage
    */
-  visionImages = document.querySelectorAll(".about-us-carousel-item > div")
+  visionImages = document.querySelectorAll(".about-us-carousel-item > div");
 
   /**
    * Corevalues components
@@ -24,40 +24,43 @@ class AboutUsDataGetter {
       fetchAboutPageData().then((data) => {
         let fetchedData = data.nadAboutspages[0];
 
-        console.log("aboutus_page",fetchedData)
+        console.log("aboutus_page", fetchedData);
         //the about banner image container
         this.aboutusBannerImage.style.backgroundImage = `url(${fetchedData.aboutusBannerImage.url})`;
 
         //for the vision Images
-        this.visionImages.forEach((divEle,index)=>{
+        this.visionImages.forEach((divEle, index) => {
           let imgContainer = divEle.querySelector("img");
-          imgContainer.src = fetchedData.visionMissionImage[index]
-        })
-       
+          console.log("img-container", imgContainer);
 
-        console.log("items",this.coreValueElements)
+          imgContainer.src = fetchedData.visionMissionImage[index].url;
+        });
+
+        console.log("items", this.coreValueElements);
         //for the corevalue Elements
         this.coreValueElements.forEach((v, idx) => {
           let fetchedCoreValueData = fetchedData.corevaluesComponent[idx];
           //check with the corevalue name to be corresponding
 
-          console.log("fetchd-core-value-item",fetchedCoreValueData)
+          console.log("fetchd-core-value-item", fetchedCoreValueData);
 
           let corevlaueNameCorresponding = v.querySelector("h3");
-          if (corevlaueNameCorresponding.innerHTML == fetchedCoreValueData.corevaluename) {
+          if (
+            corevlaueNameCorresponding.innerHTML ==
+            fetchedCoreValueData.corevaluename
+          ) {
             let currentImage = v.querySelector("img");
-            currentImage.style.width = "300px"
-            currentImage.style.height = "200px"
+            currentImage.style.width = "350px";
+            currentImage.style.height = "250px";
 
             currentImage.src = fetchedCoreValueData.corevalueImage.url;
           }
         });
       });
     } catch (error) {
-        console.log("fetched data for the aboutus data")
+      console.log("fetched data for the aboutus data");
     }
   }
 }
 
-
-new AboutUsDataGetter().main()
+new AboutUsDataGetter().main();
