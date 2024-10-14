@@ -3,7 +3,7 @@
 /*******************************/
 body {
     color: #666666;
-    background: #dddddd;
+    background: #ffffff;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
@@ -723,6 +723,7 @@ a:focus {
     overflow: hidden;
     position: relative;
     width: 100%; /* Adjust width as necessary */
+    background-color: white;
   
 }
 
@@ -2030,9 +2031,7 @@ a:focus {
     opacity: 0;
 }
 
-.portfolio .portfolio-warp:hover .portfolio-overlay {
-    opacity: 1;
-}
+
 
 .portfolio .portfolio-overlay p {
     margin: 0;

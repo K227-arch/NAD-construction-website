@@ -22,7 +22,7 @@ class AboutUsDataGetter {
   main() {
     try {
       fetchAboutPageData().then((data) => {
-        let fetchedData = data.nadAboutspages;
+        let fetchedData = data.nadAboutspages[0];
 
         console.log("aboutus_page",fetchedData)
         //the about banner image container
@@ -31,17 +31,21 @@ class AboutUsDataGetter {
         //for the vision Image
         this.visionImage.src = fetchedData.visionMissionImage.url;
 
-        //for the corevalue Elements
-        this.coreValueElements.forEach((v, idx) => {
-          let fetchedCoreValueData = corevaluesComponent[idx];
-          //check with the corevalue name to be corresponding
+        console.log("vison-mission",visionMissionImage)
 
-          let corevlaueNameCorresponding = v.querySelector("h3");
-          if (corevlaueNameCorresponding.innerHTML == fetchedCoreValueData.corevaluename) {
-            let currentImage = v.querySelector("img");
-            currentImage.src = fetchedCoreValueData.corevalueImage.url;
-          }
-        });
+        console.log(this.coreValueElements)
+
+        //for the corevalue Elements
+        // this.coreValueElements.forEach((v, idx) => {
+        //   let fetchedCoreValueData = corevaluesComponent[idx];
+        //   //check with the corevalue name to be corresponding
+
+        //   let corevlaueNameCorresponding = v.querySelector("h3");
+        //   if (corevlaueNameCorresponding.innerHTML == fetchedCoreValueData.corevaluename) {
+        //     let currentImage = v.querySelector("img");
+        //     currentImage.src = fetchedCoreValueData.corevalueImage.url;
+        //   }
+        // });
       });
     } catch (error) {
         console.log("fetched data for the aboutus data")
