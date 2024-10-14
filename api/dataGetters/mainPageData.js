@@ -42,27 +42,27 @@ class MainDataGetter {
 
           console.log("home_page",fetchedData)
 
-          //data from the banner Images
-          let bannerImageFetchedData = fetchedData.bannerImage;
-          this.distributeForBannerImages(
-            bannerImageFetchedData[0],
-            bannerImageFetchedData[1],
-            bannerImageFetchedData[2]
-          );
+          // //data from the banner Images
+          // let bannerImageFetchedData = fetchedData.bannerImage;
+          // this.distributeForBannerImages(
+          //   bannerImageFetchedData[0],
+          //   bannerImageFetchedData[1],
+          //   bannerImageFetchedData[2]
+          // );
 
-          //data for the AboutImage
-          let aboutImageFetchedData = fetchedData.briefAbout;
-          this.aboutImageElement.src = aboutImageFetchedData.url;
+          // //data for the AboutImage
+          // let aboutImageFetchedData = fetchedData.briefAbout;
+          // this.aboutImageElement.src = aboutImageFetchedData.url;
 
-          //data for the VideoContainer
-          let videoContainerFetchedData = fetchedData.videoContainer
-          this.videoElement.setAttribute("data-src",videoContainerFetchedData.url) 
+          // //data for the VideoContainer
+          // let videoContainerFetchedData = fetchedData.videoContainer
+          // this.videoElement.setAttribute("data-src",videoContainerFetchedData.url) 
 
-          //data for the team Members
-          this.distributeDataForTeamElements(fetchedData.engineerComponent)
+          // //data for the team Members
+          // this.distributeDataForTeamElements(fetchedData.engineerComponent)
 
-          //data for the testimony Images
-          this.distributeDataForTestimonialImages(fetchedData.testimonialImages)
+          // //data for the testimony Images
+          // this.distributeDataForTestimonialImages(fetchedData.testimonialImages)
         }
       );
     } catch (error) {
@@ -121,4 +121,4 @@ class MainDataGetter {
   }
 }
 
-// new MainDataGetter().main();
+new MainDataGetter().main();
