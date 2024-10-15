@@ -1,31 +1,34 @@
-import { fetchProjectsPageData } from "../queries/projectsPageQuery.js"
+import { fetchProjectsPageData } from "../queries/projectsPageQuery.js";
+import { dom } from "../util.js";
 
-class ProjectsDataGetter  {
+class ProjectsDataGetter {
+  /**
+   * service Image Banner
+   */
 
- 
- 
-    projectImageElements = document.querySelectorAll(".project-images-container  > div")
+  projectsPageBanner = dom(".page-header3");
 
+  projectImageElements = document.querySelectorAll(
+    ".project-images-container  > div"
+  );
 
-    main(){
+  main() {
+    try {
+      fetchProjectsPageData().then((data) => {
+        this.projectsPageBanner.style.backgroundImage = `url(${data.nadProjects[0].bannerImage.url})`;
 
-        try {
-            
-            fetchProjectsPageData().then((data)=>{
-
-                let _fetchedProjectsData = data.nadProjects[0].projectImages;
-                this.projectImageElements.forEach((el,index)=>{
-
-                    let imageElement = el.querySelector('img');
-                    imageElement.src = _fetchedProjectsData[index].url
-
-                })
-
-            })
-        } catch (error) {
-            console.log("Failed to fetch projects data")
-        }
+        let _fetchedProjectsData = data.nadProjects[0].projectImages;
+        this.projectImageElements.forEach((el, index) => {
+          let imageElement = el.querySelector("img");
+          imageElement.style.height = "300px";
+          imageElement.style.width = "400px";
+          imageElement.src = _fetchedProjectsData[index].url;
+        });
+      });
+    } catch (error) {
+      console.log("Failed to fetch projects data");
     }
+  }
 }
 
-new ProjectsDataGetter().main()
+new ProjectsDataGetter().main();

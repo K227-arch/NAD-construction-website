@@ -45,6 +45,9 @@ class ServicesPageDataGetter {
 
           if(precodedHTML == graphqlServiceName) {
             let serviceImageElement = v.querySelector("img");
+            serviceImageElement.style.height = "300px"
+            serviceImageElement.style.width = "400px"
+
             serviceImageElement.src = fetchedServiceDataIndex.serviceImage.url;
           }else{
 

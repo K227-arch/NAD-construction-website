@@ -12,6 +12,9 @@ const projectsPageQL = col.gql`
 
 {
   nadProjects {
+    bannerImage {
+      url
+    }
     projectImages {
       url
     }

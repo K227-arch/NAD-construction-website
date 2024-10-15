@@ -50,8 +50,9 @@ class AboutUsDataGetter {
             fetchedCoreValueData.corevaluename
           ) {
             let currentImage = v.querySelector("img");
-            currentImage.style.width = "350px";
-            currentImage.style.height = "250px";
+            currentImage.style.height = "300px";
+            currentImage.style.width = "400px";
+
 
             currentImage.src = fetchedCoreValueData.corevalueImage.url;
           }
