@@ -12,7 +12,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "graphql-request": "^7.1.0"
+    "graphql-request": "^7.1.0",
+    "he": "^1.2.0"
   },
   "devDependencies": {
     "vite": "^5.4.8",

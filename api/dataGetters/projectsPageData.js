@@ -13,10 +13,7 @@ class ProjectsDataGetter  {
             
             fetchProjectsPageData().then((data)=>{
 
-                let _fetchedProjectsData = data.nadProjects;
-
-                console.log("projects",_fetchedProjectsData)
-
+                let _fetchedProjectsData = data.nadProjects[0].projectImages;
                 this.projectImageElements.forEach((el,index)=>{
 
                     let imageElement = el.querySelector('img');

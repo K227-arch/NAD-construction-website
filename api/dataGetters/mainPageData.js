@@ -13,7 +13,7 @@ class MainDataGetter {
   /**
    * About Image
    */
-  aboutImageElement = dom(".about-img");
+  aboutImageElement = dom(".about-img > img");
 
   /**
    * video Element
