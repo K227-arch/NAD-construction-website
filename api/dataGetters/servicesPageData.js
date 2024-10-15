@@ -1,8 +1,15 @@
 import { fetchServicesPageData } from "../queries/servicePageQuery.js";
 import he from "he"
+import { dom } from "../util.js";
 
 
 class ServicesPageDataGetter {
+
+  /**
+   * service Image Banner
+   */
+
+    servicePageBanner = dom(".page-header2");
   /**
    * The service Elements
    */
@@ -16,6 +23,10 @@ class ServicesPageDataGetter {
         let fetchedServiceData = data.nadServices;
 
         let resolvedData = fetchedServiceData[0].serviceComponent
+
+        console.log(fetchedServiceData)
+
+        this.servicePageBanner.style.backgroundImage = `url(${fetchedServiceData[0].bannerImage.url})`;
 
 
 

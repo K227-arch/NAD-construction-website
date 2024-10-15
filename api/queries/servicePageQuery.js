@@ -9,6 +9,9 @@ export const GRAPH_CMS_CLIENT =  new col.GraphQLClient("https://eu-west-2.cdn.hy
 const servicesQL = col.gql`
 {
   nadServices {
+     bannerImage {
+      url
+    }
     serviceComponent {
       serviceName
       serviceImage {
