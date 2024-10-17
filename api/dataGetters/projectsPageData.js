@@ -17,7 +17,12 @@ class ProjectsDataGetter {
       fetchProjectsPageData().then((data) => {
         this.projectsPageBanner.style.backgroundImage = `url(${data.nadProjects[0].bannerImage.url})`;
 
+
+        console.log("Project_Elements",this.projectImageElements)
+
         let _fetchedProjectsData = data.nadProjects[0].projectImages;
+
+        console.log("images",_fetchedProjectsData)
         this.projectImageElements.forEach((el, index) => {
           let imageElement = el.querySelector("img");
           imageElement.style.height = "300px";

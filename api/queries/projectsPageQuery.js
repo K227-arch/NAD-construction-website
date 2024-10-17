@@ -15,7 +15,7 @@ const projectsPageQL = col.gql`
     bannerImage {
       url
     }
-    projectImages {
+    projectImages(first:100) {
       url
     }
   }
