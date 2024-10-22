@@ -1,5 +1,6 @@
 import { dom } from "../util.js";
 import { fetchAboutPageData } from "../queries/aboutPageQuery.js";
+import he from "he"
 
 class AboutUsDataGetter {
   /**
@@ -45,8 +46,9 @@ class AboutUsDataGetter {
           console.log("fetchd-core-value-item", fetchedCoreValueData);
 
           let corevlaueNameCorresponding = v.querySelector("h3");
+          let encodedCoreValuesHTML = he.decode(corevlaueNameCorresponding.innerHTML)
           if (
-            corevlaueNameCorresponding.innerHTML ==
+            encodedCoreValuesHTML ==
             fetchedCoreValueData.corevaluename
           ) {
             let currentImage = v.querySelector("img");

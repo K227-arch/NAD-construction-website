@@ -1407,6 +1407,7 @@ a:focus {
     position: relative;
     width: 100%;
     padding: 45px 0 15px 0;
+    
 }
 
 .blog .blog-item {
@@ -1415,6 +1416,7 @@ a:focus {
     text-align: center;
     margin-bottom: 30px;
 }
+
 
 .blog .blog-img {
     position: relative;
@@ -1433,6 +1435,7 @@ a:focus {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    
 }
 
 .blog .blog-title h3 {
@@ -1502,11 +1505,13 @@ a:focus {
 .blog .blog-text {
     padding: 10px 25px 25px 25px;
     background: #f3f6ff;
+    
 }
 
 .blog .blog-text p {
     margin: 0;
     font-size: 16px;
+    
 }
 
 .blog .pagination .page-link {
