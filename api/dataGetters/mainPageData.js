@@ -15,18 +15,8 @@ class MainDataGetter {
    */
   aboutImageElement = dom(".about-img > img");
 
-  /**
-   * video Element
-   */
-  videoElement = dom(".btn-play");
-
-  /**
-   * Team Elements
-   */
-  teamElements = document.querySelectorAll(
-    ".team-container > div.team-item-base"
-  );
-
+ 
+  teamImageElement = dom("#team-sl-image")
 
   main() {
     try {
@@ -34,7 +24,7 @@ class MainDataGetter {
         (/** @type {{ nadMainpages: any[]; }} */ data) => {
           let fetchedData = data.nadMainpages[0];
 
-          console.log("home_page",fetchedData)
+          console.log("home_page", fetchedData);
 
           //data from the banner Images
           let bannerImageFetchedData = fetchedData.bannerImage;
@@ -49,41 +39,52 @@ class MainDataGetter {
           this.aboutImageElement.src = aboutImageFetchedData.url;
 
           //data for the VideoContainer
-          let videoContainerFetchedData = fetchedData.videoContainer
-          this.videoElement.setAttribute("data-src",videoContainerFetchedData.url) 
+          let videoContainerFetchedData = fetchedData.videoContainer;
+          this.createVideoInterAutoPlay(videoContainerFetchedData.url);
 
-          //data for the team Members
-          // this.distributeDataForTeamElements(fetchedData.engineerComponent)
+          //data for the teamImage
+          let teamImageUrlSrc = fetchedData.teamImage.url;
+          this.teamImageElement.src = teamImageUrlSrc;
+
         }
       );
     } catch (error) {
-
-      console.log("An error occured while trying to fetch data from the server")
+      console.log(
+        "An error occured while trying to fetch data from the server",error
+      );
     }
   }
 
   /**
-   * @param {{engineerName:{text:string},engineerCompanypost:{text:string},engineerImage:{url:string}}[]} data
+   * @param {any} videoSrc
    */
-  distributeDataForTeamElements(data){
+  createVideoInterAutoPlay(videoSrc) {
+    const videoElement = document.getElementById("video");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Set autoplay URL when visible
+            // @ts-ignore
+            videoElement.src = videoSrc;
 
-    this.teamElements.forEach((v,index)=>{
-        let teamImageElement = v.querySelector('img');
-        let teamTitle = v.querySelector('h2')
-        let teamPost = v.querySelector('p');
+            //@ts-ignore
+            videoElement.play();
+            // @ts-ignore
+          } else {
+            // Reset URL to stop playing when not visible
+            // @ts-ignore
+            videoElement.src = "";
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the video is visible
+    );
 
-        let quantifiedData = data[index]
-
-        // @ts-ignore
-        teamImageElement.src = quantifiedData.engineerImage.url;
-        //@ts-ignore
-        teamTitle.innerHTML = quantifiedData.engineerName.text;
-        //@ts-ignore
-        teamPost.innerHTML = quantifiedData.engineerCompanypost.text;
-
-
-    })
+    // @ts-ignore
+    observer.observe(videoElement);
   }
+
 
   /**
    * @param {{ url: string; }} img1
@@ -98,4 +99,3 @@ class MainDataGetter {
 }
 
 new MainDataGetter().main();
- 

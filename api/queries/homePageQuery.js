@@ -1,10 +1,12 @@
-import * as col from 'graphql-request';
+import * as col from "graphql-request";
 /**
  *
- * The GraphQL Client  
- * 
+ * The GraphQL Client
+ *
  */
-export const GRAPH_CMS_CLIENT =  new col.GraphQLClient("https://eu-west-2.cdn.hygraph.com/content/cm1yhii9j04qr07w2iq1d24ql/master");
+export const GRAPH_CMS_CLIENT = new col.GraphQLClient(
+  "https://eu-west-2.cdn.hygraph.com/content/cm3h1wo9j0bf506l24zzm2m74/master"
+);
 
 const mainPageQL = col.gql`
 
@@ -19,26 +21,14 @@ const mainPageQL = col.gql`
     videoContainer {
       url
     }
-    engineerComponent {
-      engineerName {
-        text
-      }
-      engineerCompanypost {
-        text
-      }
-      engineerImage {
-        url
-      }
-    }
-    testimonialImages {
+   teamImage {
       url
-    }
+   }
   }
 }
 
 `;
 
-export function fetchHomePageData(){
-    return GRAPH_CMS_CLIENT.request(mainPageQL)
+export function fetchHomePageData() {
+  return GRAPH_CMS_CLIENT.request(mainPageQL);
 }
-

@@ -57,21 +57,27 @@
     
     
     // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+        // const videoElement = document.getElementById("video");
+        // const observer = new IntersectionObserver(
+        //   (entries) => {
+        //     entries.forEach((entry) => {
+        //       if (entry.isIntersecting) {
+        //         // Set autoplay URL when visible
+        //         videoElement.src =
+        //           "https://www.youtube.com/embed/DWRcNpR6Kdc?autoplay=1&mute=1";
+        //       } else {
+        //         // Reset URL to stop playing when not visible
+        //         videoElement.src =
+        //           "https://www.youtube.com/embed/DWRcNpR6Kdc?autoplay=0&mute=1";
+        //       }
+        //     });
+        //   },
+        //   { threshold: 0.5 } // Trigger when 50% of the video is visible
+        // );
+    
+        // observer.observe(videoElement);
+      });
 
 
     // Testimonial Slider
